@@ -12,16 +12,13 @@ const categoryColors = {
 
 export default function TechStack() {
   return (
-    <Box id="stack" sx={{ py: 8 }}>
+    <Box id="stack">
       <Container maxWidth="lg">
         <Typography variant="overline" color="primary" fontWeight={700} letterSpacing={3}>
           SKILLS
         </Typography>
         <Typography variant="h3" fontWeight={800} mb={2}>
           Tech Stack
-        </Typography>
-        <Typography variant="body1" color="text.secondary" mb={8} sx={{ maxWidth: 560 }}>
-          Technologies I use to build production systems — from API to deployment.
         </Typography>
 
         <Grid container spacing={3}>

@@ -4,8 +4,8 @@ export const personalInfo = {
   company: "Akbar Offshore",
   location: "Kochi, India",
   email: "suriyasankar.dev@gmail.com",
-  github: "https://github.com/suriyasankar",
-  linkedin: "https://linkedin.com/in/suriyasankar",
+  github: "https://github.com/suriyasankarp",
+  linkedin: "https://linkedin.com/in/suriyasankarp",
   tagline: "Backend-focused Full-Stack .NET Engineer",
   bio: "Senior Software Engineer at Akbar Offshore with ~3 years of experience building enterprise-grade backend systems. Founding member of the T3 Center of Excellence team. Passionate about Clean Architecture, distributed systems, and cloud-native deployments.",
 };
