@@ -43,7 +43,7 @@ export default function Footer() {
           {personalInfo.name} &bull; {personalInfo.role}
         </Typography>
         <Typography variant="caption" color="text.secondary" sx={{ display: "block" }}>
-          Built with React + Vite + Material UI &bull; Deployed via Docker & Kubernetes
+          Built with React + Vite + Material UI &bull; Deployed via Docker
         </Typography>
       </Container>
     </Box>
