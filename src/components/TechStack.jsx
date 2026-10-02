@@ -13,7 +13,7 @@ const categoryColors = {
 
 export default function TechStack() {
   return (
-    <Box id="stack" component="section" sx={{ py: { xs: 8, md: 12 } }}>
+    <Box id="stack" component="section" sx={{ pt: { xs: 6, md: 8 }, pb: { xs: 8, md: 12 } }}>
       <Container maxWidth="lg">
         <SectionHeader
           overline="SKILLS"

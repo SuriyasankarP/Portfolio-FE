@@ -13,13 +13,10 @@ export default function Hero() {
       id="about"
       component="section"
       sx={{
-        minHeight: "100vh",
-        display: "flex",
-        alignItems: "center",
         position: "relative",
         overflow: "hidden",
-        pt: { xs: 12, md: 8 },
-        pb: { xs: 8, md: 8 },
+        pt: { xs: 14, md: 20 },
+        pb: { xs: 4, md: 6 },
         "&::before": {
           content: '""',
           position: "absolute",

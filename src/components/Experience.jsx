@@ -90,13 +90,25 @@ export default function Experience() {
                   {job.company} &bull; {job.location}
                 </Typography>
 
-                <Typography variant="body2" color="text.secondary" sx={{ mb: 1.5 }}>
+                <Typography variant="body2" color="text.secondary">
                   {job.from} — {job.to}
                 </Typography>
 
-                <Typography variant="body2" color="text.secondary">
-                  {job.note}
-                </Typography>
+                {job.highlights.length > 0 && (
+                  <Box component="ul" sx={{ pl: 2.5, mt: 1.5, mb: 0 }}>
+                    {job.highlights.map((h) => (
+                      <Typography
+                        key={h}
+                        component="li"
+                        variant="body2"
+                        color="text.secondary"
+                        sx={{ lineHeight: 1.6, "&:not(:last-of-type)": { mb: 0.75 } }}
+                      >
+                        {h}
+                      </Typography>
+                    ))}
+                  </Box>
+                )}
               </Paper>
             </Box>
           ))}
