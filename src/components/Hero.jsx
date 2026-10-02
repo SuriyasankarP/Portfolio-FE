@@ -33,13 +33,13 @@ export default function Hero() {
     >
       <Container maxWidth="lg" sx={{ position: "relative" }}>
         <Box sx={{ maxWidth: 720 }}>
-          <Chip
+          {/* <Chip
             label="Open to Opportunities"
             color="primary"
             variant="outlined"
             size="small"
             sx={{ mb: 3, fontWeight: 500 }}
-          />
+          /> */}
 
           <Typography
             variant="h1"

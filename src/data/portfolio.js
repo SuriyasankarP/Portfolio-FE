@@ -7,7 +7,7 @@ export const personalInfo = {
   github: "https://github.com/suriyasankarp",
   linkedin: "https://linkedin.com/in/suriyasankarp",
   tagline: "Backend-focused Full-Stack .NET Engineer",
-  bio: "Backend-focused .NET engineer with 4 years of experience building high-traffic flight booking platforms — handling 20–30K searches and 200K+ supplier API calls every day. I design resilient, cache-heavy ASP.NET Core services, secure them with JWT and role-based access, and ship them with Docker and Azure DevOps. Founding member of the T3 Center of Excellence.",
+  bio: "Backend-focused .NET engineer with around 4 years of experience building high-traffic flight booking platforms — handling 20–30K searches and 200K+ supplier API calls every day. I design resilient, cache-heavy ASP.NET Core services, secure them with JWT and role-based access, and ship them with Docker and Azure DevOps. Founding member of the T3 Center of Excellence.",
 };
 
 export const techStack = [
