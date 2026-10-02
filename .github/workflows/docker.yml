@@ -1,0 +1,63 @@
+# Label shown on GitHub's "Actions" tab
+name: Build and push Docker image
+
+# WHEN to run
+on:
+  push:
+    branches:
+      - main            # every push to main
+  workflow_dispatch:    # adds a manual "Run workflow" button
+
+# What this workflow is allowed to do with its automatic GitHub token
+permissions:
+  contents: read        # read the repo code
+  packages: write       # publish images to GHCR
+
+# Variables reused below
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}   # becomes "SuriyasankarP/Portfolio-FE"
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest   # a fresh Linux VM provided by GitHub
+
+    steps:
+      # 1. Download your repo onto the runner (like "git clone")
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      # 2. Enable BuildKit/buildx (same builder you installed on your server)
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      # 3. Log in to GHCR, like "docker login".
+      #    GITHUB_TOKEN is created automatically for every run - no password needed
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      # 4. Work out the image name + tags (also lowercases the na
+      #    because image names must be lowercase)
+      - name: Generate image tags
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=raw,value=latest
+            type=sha
+
+      # 5. Build with YOUR Dockerfile and push to GHCR
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: .                 # same as the "." in "docker
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha       # reuse layers from previous
+          cache-to: type=gha,mode=max
