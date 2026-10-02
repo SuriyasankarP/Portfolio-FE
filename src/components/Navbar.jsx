@@ -19,7 +19,7 @@ import CodeIcon from "@mui/icons-material/Code";
 import MenuIcon from "@mui/icons-material/Menu";
 import { personalInfo } from "../data/portfolio";
 
-const navLinks = ["About", "Stack", "Projects", "Experience"];
+const navLinks = ["About", "Stack", "Projects", "Experience", "Education"];
 
 export default function Navbar({ mode, toggleMode }) {
   const trigger = useScrollTrigger({ disableHysteresis: true, threshold: 50 });

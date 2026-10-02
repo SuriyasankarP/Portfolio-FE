@@ -71,6 +71,8 @@ export const projects = [
       "End-to-end B2C flight booking platform that I designed and built independently — from the high-level design to production — using the existing GetFares B2B system as its upstream API.",
     highlights: [
       "Authored the high-level design and built the platform end to end",
+      "Cut end-to-end search latency by ~35% with async processing, request timeouts and Aerospike response caching",
+      "Exposes a secure partner API consumed by a leading travel metasearch platform",
       "Authentication layer with JWT, role-based access and custom signing keys",
       "RBAC model across ~30 API endpoints with staff/client separation and row-level data isolation",
       "Found and fixed a privilege-escalation flaw in the existing authorization logic",
@@ -120,6 +122,8 @@ export const experience = [
     to: "Present",
     highlights: [
       "Architected and independently built the BuyBestFares B2C platform on top of the B2B system",
+      "Built the partner API that a travel metasearch platform uses to pull BuyBestFares fares",
+      "Reduced BuyBestFares search latency by ~35% through async processing and Aerospike caching",
       "Designed RBAC across ~30 endpoints with row-level isolation; fixed a privilege-escalation flaw",
       "Cut cached payload size by ~27% and compression time by ~50%",
       "Built MailIntelligent, an AI-powered email auto-reply system that replaced manual triage",
@@ -163,5 +167,16 @@ export const experience = [
     from: "Oct 2022",
     to: "Apr 2023",
     highlights: [],
+  },
+];
+
+export const education = [
+  {
+    degree: "B.E. Computer Science and Engineering",
+    institution: "Paavai Engineering College",
+    location: "Namakkal, Tamil Nadu",
+    from: "2019",
+    to: "2023",
+    grade: "7.8/10 CGPA (First Class)",
   },
 ];

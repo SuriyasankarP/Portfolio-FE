@@ -27,3 +27,6 @@ dist-ssr
 .env
 .env.*
 !.env.example
+
+# Personal reference files (resumes) - never commit
+*.pdf
