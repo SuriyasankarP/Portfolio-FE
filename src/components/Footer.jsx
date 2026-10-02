@@ -16,21 +16,33 @@ export default function Footer() {
       }}
     >
       <Container maxWidth="lg">
-        <Stack direction="row" justifyContent="center" spacing={1} mb={2}>
-          <IconButton href={personalInfo.github} target="_blank" color="inherit">
+        <Stack direction="row" spacing={1} sx={{ justifyContent: "center", mb: 2 }}>
+          <IconButton
+            href={personalInfo.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            color="inherit"
+          >
             <GitHubIcon />
           </IconButton>
-          <IconButton href={personalInfo.linkedin} target="_blank" color="inherit">
+          <IconButton
+            href={personalInfo.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            color="inherit"
+          >
             <LinkedInIcon />
           </IconButton>
-          <IconButton href={`mailto:${personalInfo.email}`} color="inherit">
+          <IconButton href={`mailto:${personalInfo.email}`} aria-label="Email" color="inherit">
             <EmailIcon />
           </IconButton>
         </Stack>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" color="text.secondary" sx={{ mb: 0.5 }}>
           {personalInfo.name} &bull; {personalInfo.role}
         </Typography>
-        <Typography variant="caption" color="text.secondary">
+        <Typography variant="caption" color="text.secondary" sx={{ display: "block" }}>
           Built with React + Vite + Material UI &bull; Deployed via Docker & Kubernetes
         </Typography>
       </Container>

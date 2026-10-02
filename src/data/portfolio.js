@@ -1,5 +1,5 @@
 export const personalInfo = {
-  name: "Suriya Sankar",
+  name: "Suriyasankar P",
   role: "Senior Software Engineer",
   company: "Akbar Offshore",
   location: "Kochi, India",
@@ -7,7 +7,7 @@ export const personalInfo = {
   github: "https://github.com/suriyasankarp",
   linkedin: "https://linkedin.com/in/suriyasankarp",
   tagline: "Backend-focused Full-Stack .NET Engineer",
-  bio: "Senior Software Engineer at Akbar Offshore with ~3 years of experience building enterprise-grade backend systems. Founding member of the T3 Center of Excellence team. Passionate about Clean Architecture, distributed systems, and cloud-native deployments.",
+  bio: "Senior Software Engineer at Akbar Offshore with ~4 years of experience building enterprise-grade backend systems. Founding member of the T3 Center of Excellence team. Passionate about Clean Architecture, distributed systems, and cloud-native deployments.",
 };
 
 export const techStack = [
@@ -29,7 +29,7 @@ export const techStack = [
   },
   {
     category: "Search & Messaging",
-    items: ["Elasticsearch", "Kafka", "Serilog"],
+    items: ["Elasticsearch", "Serilog"],
   },
   {
     category: "AI & Integration",
@@ -37,7 +37,7 @@ export const techStack = [
   },
   {
     category: "Frontend",
-    items: ["React", "Next.js", "Material UI", "TypeScript", ".NET MAUI"],
+    items: ["React", "Material UI", "JavaScript", ".NET MAUI"],
   },
 ];
 

@@ -1,4 +1,5 @@
 import { Box, Container, Typography, Grid, Paper, Chip } from "@mui/material";
+import SectionHeader from "./SectionHeader";
 import { techStack } from "../data/portfolio";
 
 const categoryColors = {
@@ -12,18 +13,17 @@ const categoryColors = {
 
 export default function TechStack() {
   return (
-    <Box id="stack">
+    <Box id="stack" component="section" sx={{ py: { xs: 8, md: 12 } }}>
       <Container maxWidth="lg">
-        <Typography variant="overline" color="primary" fontWeight={700} letterSpacing={3}>
-          SKILLS
-        </Typography>
-        <Typography variant="h3" fontWeight={800} mb={2}>
-          Tech Stack
-        </Typography>
+        <SectionHeader
+          overline="SKILLS"
+          title="Tech Stack"
+          subtitle="Tools and technologies I use to design, build and ship production systems."
+        />
 
         <Grid container spacing={3}>
           {techStack.map((group) => (
-            <Grid item xs={12} sm={6} md={4} key={group.category}>
+            <Grid size={{ xs: 12, sm: 6, md: 4 }} key={group.category}>
               <Paper
                 elevation={0}
                 sx={{
@@ -41,13 +41,13 @@ export default function TechStack() {
               >
                 <Typography
                   variant="subtitle1"
-                  fontWeight={700}
+                  component="h3"
                   color={`${categoryColors[group.category] || "primary"}.main`}
-                  mb={2}
+                  sx={{ fontWeight: 700, mb: 2 }}
                 >
                   {group.category}
                 </Typography>
-                <Box display="flex" flexWrap="wrap" gap={1}>
+                <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
                   {group.items.map((item) => (
                     <Chip
                       key={item}

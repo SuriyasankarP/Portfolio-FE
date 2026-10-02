@@ -1,27 +1,27 @@
 import { Box, Container, Typography, Paper, Chip } from "@mui/material";
 import WorkIcon from "@mui/icons-material/Work";
+import SectionHeader from "./SectionHeader";
 import { experience } from "../data/portfolio";
+
+const DOT_SIZE = { xs: 40, sm: 56 };
 
 export default function Experience() {
   return (
-    <Box id="experience" sx={{ py: 12 }}>
+    <Box id="experience" component="section" sx={{ py: { xs: 8, md: 12 } }}>
       <Container maxWidth="lg">
-        <Typography variant="overline" color="primary" fontWeight={700} letterSpacing={3}>
-          CAREER
-        </Typography>
-        <Typography variant="h3" fontWeight={800} mb={2}>
-          Experience
-        </Typography>
-        <Typography variant="body1" color="text.secondary" mb={8} sx={{ maxWidth: 560 }}>
-          My professional journey in software engineering.
-        </Typography>
+        <SectionHeader
+          overline="CAREER"
+          title="Experience"
+          subtitle="My professional journey in software engineering."
+        />
 
-        <Box sx={{ maxWidth: 700, position: "relative" }}>
+        <Box sx={{ maxWidth: 760, position: "relative" }}>
+          {/* Timeline line, centred under the icon dots */}
           <Box
             sx={{
               position: "absolute",
-              left: 28,
-              top: 0,
+              left: { xs: DOT_SIZE.xs / 2 - 1, sm: DOT_SIZE.sm / 2 - 1 },
+              top: { xs: DOT_SIZE.xs / 2, sm: DOT_SIZE.sm / 2 },
               bottom: 0,
               width: "2px",
               backgroundColor: "primary.main",
@@ -29,14 +29,23 @@ export default function Experience() {
             }}
           />
 
-          {experience.map((job, index) => (
-            <Box key={index} display="flex" gap={4} mb={4} sx={{ position: "relative" }}>
+          {experience.map((job) => (
+            <Box
+              key={`${job.role}-${job.from}`}
+              sx={{
+                display: "flex",
+                gap: { xs: 2, sm: 4 },
+                position: "relative",
+                "&:not(:last-of-type)": { mb: 4 },
+              }}
+            >
               <Box
                 sx={{
-                  width: 56,
-                  height: 56,
+                  width: DOT_SIZE,
+                  height: DOT_SIZE,
                   borderRadius: "50%",
                   backgroundColor: "primary.main",
+                  color: "primary.contrastText",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -45,7 +54,7 @@ export default function Experience() {
                   boxShadow: 4,
                 }}
               >
-                <WorkIcon sx={{ color: "#fff", fontSize: 24 }} />
+                <WorkIcon sx={{ fontSize: { xs: 20, sm: 24 } }} />
               </Box>
 
               <Paper
@@ -53,25 +62,35 @@ export default function Experience() {
                 sx={{
                   p: 3,
                   flex: 1,
+                  minWidth: 0,
                   border: "1px solid",
                   borderColor: "divider",
                   borderRadius: 3,
                 }}
               >
-                <Box display="flex" justifyContent="space-between" alignItems="flex-start" flexWrap="wrap" gap={1} mb={1}>
-                  <Typography variant="h6" fontWeight={700}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    flexWrap: "wrap",
+                    gap: 1,
+                    mb: 1,
+                  }}
+                >
+                  <Typography variant="h6" component="h3" sx={{ fontWeight: 700 }}>
                     {job.role}
                   </Typography>
-                  {index === 0 && (
+                  {job.to === "Present" && (
                     <Chip label="Current" color="primary" size="small" sx={{ fontWeight: 600 }} />
                   )}
                 </Box>
 
-                <Typography variant="subtitle2" color="primary" fontWeight={600} mb={0.5}>
+                <Typography variant="subtitle2" color="primary" sx={{ fontWeight: 600, mb: 0.5 }}>
                   {job.company} &bull; {job.location}
                 </Typography>
 
-                <Typography variant="body2" color="text.secondary" mb={1.5}>
+                <Typography variant="body2" color="text.secondary" sx={{ mb: 1.5 }}>
                   {job.from} — {job.to}
                 </Typography>
 
