@@ -46,6 +46,24 @@ export const techStack = [
 
 export const projects = [
   {
+    title: "GetFares",
+    featured: true,
+    subtitle: "B2B Flight Search & Booking Platform",
+    role: "Backend Engineer",
+    description:
+      "High-concurrency B2B flight search and booking platform aggregating fares from multiple suppliers, built for reliability when external APIs are slow or failing.",
+    highlights: [
+      "Serves 20–30K daily searches and 200K+ supplier API calls per day",
+      "Multi-supplier fare aggregation across GDS and aggregator APIs, including Sabre and Amadeus",
+      "Retry, timeout, partial-failure and graceful-fallback handling for supplier APIs",
+      "~30% faster responses via EF Core query optimization and Aerospike caching",
+      "Re-engineered cache compression: ~27% smaller payloads, ~50% faster compression",
+      "Secured 5+ microservices with IdentityServer claims-based authorization",
+    ],
+    tech: ["ASP.NET Core", "EF Core", "Aerospike", "Redis", "MySQL", "IdentityServer", "Azure DevOps"],
+    type: "Production",
+  },
+  {
     title: "BuyBestFares",
     subtitle: "B2C Flight Booking Platform",
     role: "Architect & Lead Developer",
@@ -60,23 +78,6 @@ export const projects = [
       "Background job processing for long-running booking workflows",
     ],
     tech: ["ASP.NET Core", "C#", "JWT", "RBAC", "Hangfire", "MySQL", "Docker"],
-    type: "Production",
-  },
-  {
-    title: "GetFares",
-    subtitle: "B2B Flight Search & Booking Platform",
-    role: "Backend Engineer",
-    description:
-      "High-concurrency B2B flight search and booking platform aggregating fares from multiple suppliers, built for reliability when external APIs are slow or failing.",
-    highlights: [
-      "Serves 20–30K daily searches and 200K+ supplier API calls per day",
-      "Supplier integrations: AeroHub, Amadeus, Sabre, Wego (HMAC-signed auth)",
-      "Retry, timeout, partial-failure and graceful-fallback handling for supplier APIs",
-      "~30% faster responses via EF Core query optimization and Aerospike caching",
-      "Re-engineered cache compression: ~27% smaller payloads, ~50% faster compression",
-      "Secured 5+ microservices with IdentityServer claims-based authorization",
-    ],
-    tech: ["ASP.NET Core", "EF Core", "Aerospike", "Redis", "MySQL", "IdentityServer", "Azure DevOps"],
     type: "Production",
   },
   {
@@ -138,6 +139,7 @@ export const experience = [
       "Founding member of the T3 Center of Excellence — high-severity incident triage and cross-team escalations",
       "Upgraded the platform to .NET 8",
       "Built a serverless Azure Function (Event Grid + Blob Storage) for automatic file tagging",
+      "Built POCs including Semantic Kernel AI orchestration and a .NET MAUI prototype",
     ],
   },
   {
@@ -147,9 +149,11 @@ export const experience = [
     from: "May 2023",
     to: "Apr 2025",
     highlights: [
-      "Built REST APIs and booking/search workflows for GetFares using ASP.NET Core",
-      "Integrated suppliers including Sabre; resilient handling of supplier timeouts",
-      "Built POCs including Semantic Kernel AI orchestration and a .NET MAUI prototype",
+      "Built REST APIs and flight search/booking workflows for GetFares using ASP.NET Core",
+      "Worked hands-on with travel-domain GDS workflows (Sabre, Amadeus) across search and booking",
+      "Delivered the Sabre GDS integration end to end",
+      "Added supplier-specific booking features such as seat-map selection and card payments",
+      "Handled supplier timeouts with retries and graceful fallback responses",
     ],
   },
   {
